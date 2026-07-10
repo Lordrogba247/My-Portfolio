@@ -1,0 +1,134 @@
+/* Stats.css */
+
+.stats-section {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background: transparent;
+  border-top: 1px solid rgba(0, 200, 220, 0.08);
+  border-bottom: 1px solid rgba(0, 200, 220, 0.08);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 36px 0;
+}
+
+.stats-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Each column holds the stat + the divider after it */
+.stat-col {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px;
+  /* Fade + slide up on load */
+  animation: statFadeUp 0.7s ease both;
+}
+
+/* Stagger each column */
+.stat-col:nth-child(1) .stat-item {
+  animation-delay: 0.1s;
+}
+.stat-col:nth-child(2) .stat-item {
+  animation-delay: 0.22s;
+}
+.stat-col:nth-child(3) .stat-item {
+  animation-delay: 0.34s;
+}
+.stat-col:nth-child(4) .stat-item {
+  animation-delay: 0.46s;
+}
+
+@keyframes statFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-number {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #00d4e0;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  /* Teal text glow */
+  text-shadow:
+    0 0 12px rgba(0, 212, 224, 0.55),
+    0 0 28px rgba(0, 212, 224, 0.25);
+  /* Smooth number changes */
+  font-variant-numeric: tabular-nums;
+  min-width: 3ch;
+  text-align: center;
+}
+
+.stat-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #4a6a7a;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Vertical divider between items */
+.stat-divider {
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 200, 220, 0.22) 30%,
+    rgba(0, 200, 220, 0.22) 30%,
+    transparent
+  );
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .stats-inner {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 20px;
+  }
+  .stat-col {
+    flex-direction: column;
+    width: 100%;
+  }
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 200, 220, 0.22) 30%,
+      rgba(0, 200, 220, 0.22) 70%,
+      transparent
+    );
+    margin: 20px 0;
+  }
+  .stat-item {
+    padding: 0;
+  }
+}

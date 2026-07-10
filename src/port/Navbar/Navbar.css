@@ -1,0 +1,201 @@
+/* Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 56px;
+  font-family: "Montserrat", sans-serif;
+  color: #eaf2f6;
+
+  /* Default: transparent */
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    padding 0.3s,
+    backdrop-filter 0.3s;
+}
+
+/* Scrolled state — frosted glass */
+.navbar--scrolled {
+  background: rgba(1, 12, 26, 0.82);
+  border-bottom: 1px solid rgba(0, 200, 220, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 14px 56px;
+}
+
+/* ── Logo ── */
+.navbar-logo {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.logo-bracket {
+  color: #00d4e0;
+}
+
+/* ── Links ── */
+.navbar-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #7a99ab;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.nav-link-btn:hover {
+  color: #eaf2f6;
+}
+
+/* ── CTA ── */
+.btn-cta {
+  background: transparent;
+  border: 1.5px solid #00d4e0;
+  color: #00d4e0;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.22s,
+    color 0.22s;
+}
+.btn-cta:hover {
+  background: #00d4e0;
+  color: #000;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .navbar {
+    padding: 18px 22px;
+  }
+  .navbar--scrolled {
+    padding: 12px 22px;
+  }
+  .navbar-links {
+    display: none;
+  }
+}
+/* ── Hamburger Button ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #eaf2f6;
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  transform-origin: center;
+}
+/* Animate to ✕ */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Menu ── */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.3s ease;
+}
+.mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 4px;
+  border-top: 1px solid rgba(0, 212, 224, 0.1);
+}
+.mobile-menu ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.mobile-menu ul li .nav-link-btn {
+  width: 100%;
+  text-align: left;
+  padding: 14px 4px;
+  font-size: 0.9rem;
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
+}
+.mobile-menu ul li .nav-link-btn:hover {
+  color: #eaf2f6;
+  padding-left: 12px;
+}
+.mobile-menu .btn-cta {
+  margin: 16px 0 8px;
+  align-self: flex-start;
+}
+
+/* ── Responsive (update existing block) ── */
+@media (max-width: 960px) {
+  .navbar {
+    padding: 18px 22px;
+    flex-wrap: wrap; /* allows mobile-menu to drop below */
+  }
+  .navbar--scrolled {
+    padding: 12px 22px;
+  }
+  .navbar-links,
+  .navbar > .btn-cta {
+    display: none; /* hide desktop nav & CTA */
+  }
+  .hamburger {
+    display: flex; /* show burger */
+  }
+  .mobile-menu {
+    display: flex; /* enable mobile menu (hidden via max-height) */
+  }
+}
