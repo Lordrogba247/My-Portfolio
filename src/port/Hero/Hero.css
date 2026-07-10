@@ -37,8 +37,7 @@
   pointer-events: none;
 }
 
-/* ── Hero Body ── 
-   padding-top: 80px pushes content below the fixed navbar (navbar height ≈ 68px) */
+/* ── Hero Body ── */
 .hero-body {
   position: relative;
   z-index: 10;
@@ -46,7 +45,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
-  padding: 100px 56px 60px; /* top: 100px = navbar height + breathing room */
+  padding: 100px 56px 60px;
   max-width: 1320px;
   margin: 0 auto;
 }
@@ -486,22 +485,86 @@
   white-space: nowrap;
 }
 
-/* ── Responsive ── */
-@media (max-width: 960px) {
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Ultra-wide screens (optional polish) */
+@media (min-width: 1600px) {
+  .hero-body {
+    max-width: 1400px;
+  }
+}
+
+/* Tablet landscape / small laptops: tighten card before stacking */
+@media (max-width: 880px) {
   .hero-body {
     flex-direction: column;
-    padding: 90px 22px 48px;
+    align-items: center;
+    padding-top: 110px;
   }
   .hero-left-wrap {
     max-width: 100%;
   }
   .profile-card {
     width: 100%;
+    max-width: 480px;
+  }
+}
+
+/* Mobile: original breakpoint adjusted */
+@media (max-width: 960px) {
+  .hero-body {
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 48px;
   }
   .hero-name {
     font-size: 2.7rem;
   }
   .btn-primary {
     font-size: 0.8rem;
+  }
+}
+
+/* Small phones: stack stats single-column */
+@media (max-width: 480px) {
+  .hero-body {
+    padding-top: 95px;
+    padding-bottom: 32px;
+  }
+  .card-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .stat-value {
+    text-align: left;
+  }
+}
+
+/* Narrow phones: stack action buttons + footer items */
+@media (max-width: 420px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* Very small phones: shrink tool tags */
+@media (max-width: 360px) {
+  .tool-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
   }
 }

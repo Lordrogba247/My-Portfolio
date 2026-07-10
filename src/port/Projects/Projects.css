@@ -80,6 +80,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  row-gap: 8px;
   background: rgba(3, 22, 36, 0.7);
   border: 1px solid rgba(0, 200, 220, 0.1);
   border-radius: 999px;
@@ -147,9 +148,7 @@
   }
 }
 
-/* Step 2 — hover lift: only kicks in after card is visible.
-   Uses animation-fill-mode: forwards so the card stays at opacity:1/translateY(0),
-   and the transition below handles hover from that resting state. */
+/* Step 2 — hover lift */
 .proj-card--visible:hover {
   border-color: rgba(0, 200, 220, 0.28);
   box-shadow: 0 8px 40px rgba(0, 180, 220, 0.1);
@@ -233,6 +232,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1;
+  min-width: 0;
 }
 
 .proj-frame-wrap {
@@ -467,7 +468,11 @@
   transform: translateX(3px);
 }
 
-/* ── Responsive ── */
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Tablets / small laptops: 2 columns + tighter grid */
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -477,14 +482,69 @@
   }
 }
 
-@media (max-width: 640px) {
+/* Mid-range tablets: reduce gap */
+@media (max-width: 900px) {
+  .projects-grid {
+    gap: 24px;
+  }
+}
+
+/* Small tablets / large phones landscape: single column + adjust padding */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 65px 24px 75px;
+  }
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
+  .proj-frame-wrap {
+    height: 260px;
+  }
+  .proj-frame-wrap--design {
+    height: 280px;
+  }
+}
+
+/* Mobile: further reduce padding + heading size */
+@media (max-width: 640px) {
   .projects-section {
     padding: 60px 20px 70px;
   }
   .projects-heading {
     font-size: 2rem;
+  }
+  .proj-iframe {
+    width: 1100px;
+    height: 700px;
+    transform: scale(0.32);
+  }
+  .lightbox-overlay {
+    padding: 20px;
+  }
+  .lightbox-close {
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small phones: tighter iframe scale + smaller badge */
+@media (max-width: 480px) {
+  .proj-iframe {
+    width: 1000px;
+    height: 650px;
+    transform: scale(0.35);
+  }
+}
+
+@media (max-width: 400px) {
+  .proj-type-badge {
+    font-size: 0.62rem;
+    padding: 4px 10px;
+    top: 10px;
+    right: 10px;
   }
 }

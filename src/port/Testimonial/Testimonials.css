@@ -201,8 +201,19 @@
   gap: 4px;
 }
 
-/* ── Responsive ── */
-@media (max-width: 1024px) {
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Mid-range tablets: reduce grid gap */
+@media (max-width: 900px) {
+  .t-grid {
+    gap: 22px;
+  }
+}
+
+/* Small tablets / large laptops: 2 columns */
+@media (max-width: 880px) {
   .t-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -211,14 +222,54 @@
   }
 }
 
-@media (max-width: 600px) {
+/* Tablets: adjust section padding */
+@media (max-width: 768px) {
+  .t-section {
+    padding: 65px 24px 75px;
+  }
+}
+
+/* Large phones landscape / small tablets: single column */
+@media (max-width: 680px) {
   .t-grid {
     grid-template-columns: 1fr;
   }
   .t-section {
     padding: 60px 20px 70px;
   }
+  .t-card {
+    padding: 28px 24px 24px;
+  }
+  .t-quote-mark {
+    font-size: 4.5rem;
+    top: 12px;
+    right: 18px;
+  }
+  .t-footer {
+    padding-top: 16px;
+  }
+}
+
+/* Small phones: reduce quote mark + text sizes */
+@media (max-width: 420px) {
+  .t-quote-mark {
+    font-size: 3.5rem;
+    opacity: 0.05;
+  }
+  .t-quote {
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+  .t-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 0.92rem;
+  }
+}
+
+/* Very small phones: shrink heading */
+@media (max-width: 400px) {
   .t-heading {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }

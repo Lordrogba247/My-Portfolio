@@ -101,16 +101,67 @@
   transform: translateY(-2px);
 }
 
-/* ── Responsive ── */
-@media (max-width: 700px) {
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Tablets: adjust padding */
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 20px 32px;
+  }
+}
+
+/* Small tablets / large phones: stack layout */
+@media (max-width: 760px) {
   .footer-inner {
     flex-direction: column;
     gap: 16px;
     padding: 20px 24px;
     text-align: center;
   }
+}
+
+/* Large phones: reduce gap + padding */
+@media (max-width: 560px) {
+  .footer-inner {
+    gap: 12px;
+    padding: 18px 20px;
+  }
+}
+
+/* Phones: keep right inline until smaller */
+@media (max-width: 500px) {
   .footer-right {
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+/* Small phones: shrink icons + logo */
+@media (max-width: 420px) {
+  .footer-socials {
+    gap: 8px;
+  }
+  .footer-social-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .footer-top-btn {
+    font-size: 0.74rem;
+  }
+}
+
+/* Extra small phones: shrink logo + copyright */
+@media (max-width: 400px) {
+  .footer-logo {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer-copy {
+    font-size: 0.68rem;
+    letter-spacing: 0.005em;
   }
 }

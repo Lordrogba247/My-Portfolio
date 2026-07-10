@@ -189,8 +189,19 @@
   max-width: 220px;
 }
 
-/* ── Responsive ── */
-@media (max-width: 860px) {
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Tablets: adjust section padding */
+@media (max-width: 768px) {
+  .work-section {
+    padding: 65px 24px 75px;
+  }
+}
+
+/* Small tablets / large phones: 2 columns + hide line */
+@media (max-width: 760px) {
   .work-timeline {
     grid-template-columns: 1fr 1fr;
     gap: 48px 20px;
@@ -198,12 +209,13 @@
   .work-line {
     display: none;
   }
-  .work-section {
-    padding: 70px 32px 80px;
+  .work-step {
+    padding: 0 12px;
   }
 }
 
-@media (max-width: 500px) {
+/* Large phones: single column */
+@media (max-width: 580px) {
   .work-timeline {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -211,7 +223,28 @@
   .work-section {
     padding: 60px 20px 70px;
   }
+  .work-header {
+    margin-bottom: 52px;
+  }
+  .work-step-desc {
+    max-width: 100%;
+  }
+}
+
+/* Small phones: reduce heading + circle size */
+@media (max-width: 420px) {
+  .work-circle {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 22px;
+  }
+  .work-circle span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
   .work-heading {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }

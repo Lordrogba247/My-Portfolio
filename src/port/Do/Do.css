@@ -164,27 +164,6 @@
   line-height: 1.72;
 }
 
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .do-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .do-section {
-    padding: 70px 32px 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  .do-grid {
-    grid-template-columns: 1fr;
-  }
-  .do-section {
-    padding: 60px 20px 70px;
-  }
-  .do-heading {
-    font-size: 2rem;
-  }
-}
 /* ── Skills Section ── */
 .skills-section {
   margin-top: 72px;
@@ -198,7 +177,7 @@
   gap: 28px 64px;
 }
 
-/* Push WordPress (5th item) to span only the left column */
+/* Push last item to span only the left column */
 .skill-item:last-child {
   grid-column: 1;
 }
@@ -261,13 +240,79 @@
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
 }
 
-/* ── Responsive ── */
-@media (max-width: 600px) {
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Tablets / small laptops: 2 columns for services */
+@media (max-width: 1024px) {
+  .do-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .do-section {
+    padding: 70px 32px 80px;
+  }
+}
+
+/* Mid-range tablets: reduce skills horizontal gap */
+@media (max-width: 900px) {
   .skills-grid {
-    /* grid-template-columns: 1fr; */
-    gap: 24px;
+    gap: 24px 36px;
+  }
+}
+
+/* Tablets: tighten service card gap */
+@media (max-width: 880px) {
+  .do-grid {
+    gap: 20px;
+  }
+}
+
+/* Small tablets / large phones: adjust section padding */
+@media (max-width: 768px) {
+  .do-section {
+    padding: 65px 24px 75px;
+  }
+}
+
+/* Mobile: single column services + reduce padding */
+@media (max-width: 600px) {
+  .do-grid {
+    grid-template-columns: 1fr;
+  }
+  .do-section {
+    padding: 60px 20px 70px;
+  }
+  .do-heading {
+    font-size: 2rem;
+  }
+  .do-card {
+    padding: 26px 22px 28px;
+  }
+  .skills-section {
+    margin-top: 48px;
+    padding-top: 40px;
+  }
+}
+
+/* Small phones: single column skills + reduce font sizes */
+@media (max-width: 500px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
   .skill-item:last-child {
     grid-column: auto;
+  }
+}
+
+/* Very small phones: shrink heading + skill text */
+@media (max-width: 400px) {
+  .do-heading {
+    font-size: 1.9rem;
+  }
+  .skill-label,
+  .skill-percent {
+    font-size: 0.76rem;
   }
 }
