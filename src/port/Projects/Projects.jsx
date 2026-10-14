@@ -23,6 +23,15 @@ const PROJECTS = [
         liveUrl: " https://heroes-school.vercel.app",
     },
     {
+        title: "XNO: Restaurant, Lounge & Events Website",
+        desc: "A clean, fully responsive medical platform built from scratch — designed to present healthcare services with clarity, trust, and a professional finish.",
+        url: "https://xnotoronto.ca",
+        tags: ["React", "JavaScript", "CSS"],
+        category: "Website",
+        type: "dev",
+        liveUrl: "https://xnotoronto.ca",
+    },
+    {
         title: "Whot Suya",
         desc: "A food ordering platform with a smooth checkout flow, dynamic order confirmation, and responsive navigation, built with careful attention to real-world payment and delivery edge cases.",
         url: "https://whotfoods.ca",
@@ -39,15 +48,6 @@ const PROJECTS = [
         category: "Website",
         type: "dev",
         liveUrl: "https://whot.ca",
-    },
-    {
-        title: "DocMed",
-        desc: "A clean, fully responsive medical platform built from scratch — designed to present healthcare services with clarity, trust, and a professional finish.",
-        url: "https://docmed-1.onrender.com",
-        tags: ["HTML", "CSS"],
-        category: "Website",
-        type: "dev",
-        liveUrl: "https://docmed-1.onrender.com",
     },
     {
         title: "Printivo",
