@@ -41,6 +41,15 @@ const PROJECTS = [
         liveUrl: "https://whotfoods.ca",
     },
     {
+        title: "PenWorld ID Card",
+        desc: "A web platform that connects clients with ID card designers, allowing users to explore available design services, learn about the designers' offerings, and make enquiries for custom ID card designs.",
+        url: "https://pw-idcard.vercel.app/",
+        tags: ["React", "JavaScript", "CSS"],
+        category: "Website",
+        type: "dev",
+        liveUrl: "https://pw-idcard.vercel.app/",
+    },
+    {
         title: "Whot Restaurant",
         desc: "A modern React-powered Canadian restaurant web application with a sleek UI, responsive layout, and seamless component-driven architecture built for performance.",
         url: "https://whot.ca",
@@ -50,15 +59,41 @@ const PROJECTS = [
         liveUrl: "https://whot.ca",
     },
     {
-        title: "Printivo",
-        desc: "A dynamic print-on-demand storefront with interactive product filtering, smooth UI transitions, and a polished e-commerce experience.",
-        url: "https://new-printivo.vercel.app",
+        title: "Fenwick & Oak",
+        desc: "A modern website designed for a bespoke woodworking and joinery business, showcasing custom craftsmanship, premium woodwork, and tailored furniture solutions.",
+        url: "https://fenwick-two.vercel.app/",
         tags: ["HTML", "CSS", "JavaScript"],
         category: "Website",
         type: "dev",
-        liveUrl: "https://new-printivo.vercel.app",
+        liveUrl: "https://fenwick-two.vercel.app/",
     },
-
+    {
+        title: "WHOT Foods – Restaurant Website & Ordering Platform (Demo)",
+        desc: "A modern, responsive restaurant website featuring e-commerce functionality, allowing customers to explore the menu, browse food items, and place orders online.",
+        url: "https://whot-foods.vercel.app/",
+        tags: ["HTML", "CSS", "JavaScript"],
+        category: "Website",
+        type: "dev",
+        liveUrl: "https://whot-foods.vercel.app/",
+    },
+    {
+        title: "RogbaDox – AI-Powered Document Platform",
+        desc: "A modern web application featuring AI-powered document tools, customizable templates, and file conversion functionality, designed to simplify document creation and management.",
+        url: "https://rogbadocforge.onrender.com/",
+        tags: ["HTML", "CSS", "JavaScript"],
+        category: "Website",
+        type: "dev",
+        liveUrl: "https://rogbadocforge.onrender.com/",
+    },
+    {
+        title: "MobolajiDesign – Personal Portfolio Website",
+        desc: "A modern personal portfolio website designed to showcase professional skills, projects, experience, and achievements, with clear ways for potential clients and employers to get in touch.",
+        url: "https://mobolajiportfolio-mu.vercel.app/",
+        tags: ["HTML", "CSS", "JavaScript"],
+        category: "Website",
+        type: "dev",
+        liveUrl: "https://mobolajiportfolio-mu.vercel.app/",
+    },
 
     // ── DESIGN WORK ──────────────────────────────────────────────
     // Replace `image` with the path to your actual design shots.
